@@ -41,3 +41,20 @@ display the resolved failure object's message property as the text content of th
 function handleError(err){
   console.log(err);
   err.textContent=err.message;
+  err.textContent=err.message;
+}
+async function updateDOMList() {
+  try {
+    let list = await getList();
+    let errorMsg = error;
+    list.forEach((hobbit) => {
+      let li = document.createElement("li");
+      li.textContent = hobbit;
+      ul.appendChild(li);
+    });
+  } catch (err) {
+    console.error(err);
+    err.textContent = err.message;
+  }
+}
+updateDOMList();
