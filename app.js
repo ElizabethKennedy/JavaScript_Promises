@@ -35,6 +35,14 @@ function handleList(list){
 }
 // TODO: If promise rejects
 // Display error message in the paragraph element with id="error" 
+
+
+/*Replace the console.log statement in the then method callback parameter to
+iterate through the resolved list of hobbits
+create a li for each hobbit, and append the li to the selected ul from the DOM
+Replace the console.log statement in the catch method callback parameter to
+display the resolved failure object's message property as the text content of the selected p from the DOM*/
+
 function handleError(err){
   console.log(err);
   err.textContent=err.message;
