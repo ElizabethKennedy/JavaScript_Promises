@@ -1,5 +1,4 @@
 "use strict";
-
 /* Returns a promise designed to resolve with a list of hobbits, or potential fail.*/
  
 function getList() {
@@ -15,14 +14,10 @@ function getList() {
   });
 }
 console.log(getList());
-
 // TODO: Handle the resolved or rejected states of promise
 let err = document.querySelector("#error");
 let ul = document.querySelector("#list");
-
-
 let promise=getList();
-
 // TODO: If the promise resolves with the list of hobbits
 // Render the list of hobbits as list items within the unordered list with id="list" 
 function handleList(list){
@@ -46,20 +41,3 @@ display the resolved failure object's message property as the text content of th
 function handleError(err){
   console.log(err);
   err.textContent=err.message;
-}
-async function updateDOMList() {
-  try {
-    let list = await getList();
-    let errorMsg = error;
-    list.forEach((hobbit) => {
-      let li = document.createElement("li");
-      li.textContent = hobbit;
-      ul.appendChild(li);
-    });
-  } catch (err) {
-    console.error(err);
-    err.textContent = err.message;
-  }
-}
-
-updateDOMList();
